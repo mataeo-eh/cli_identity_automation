@@ -5,7 +5,7 @@
 # in a format compatible with azure naming (excludes white space and colons)
 TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 # Turns each entry in the JSON file into a one line json for extracting information
-jq -c '.value[]' my_groups.json | while read -r group; do
+jq -c '.value[]' graph_memberOF.json | while read -r group; do
     # Extracts the display name, and id of each entry. Normalizes the display name as lowercase for rule checks
     NAME=$(echo "$group" | jq -r '.displayName')
     ID=$(echo "$group" | jq -r '.id')
