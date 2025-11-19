@@ -1,0 +1,23 @@
+1. I called the API endpoint "https://graph.microsoft.com/v1.memberOf?\$select=displayName,id" and 
+    got the code "BadRequest" which corresponds with HTTP status code 400. This tells me that the url
+    I selected as the API endpoint likely doesn't exist since it was a BadRequest. The error message says
+    'Invalid version' which corroborates the idea that the API endpoint called does not exist.
+2. The error was caused because the API version v1.memberOf does not exist. The / to separate
+    the version from the rest of the endpoint call was missing. The endpoint called was also missing
+    the rest of the version. It should be .com/v1.0 and then also needs /me/memberOf to reach an actual
+    existing endpoint. Since the version did not exist, and an additional parameter was missing, the error
+    can be fixed by calling an existing version and including the full path to an existing API endpoint. 
+3. https://graph.microsoft.com/v1.0/me/memberOf?\$select=displayName,id
+    - base URL: https://graph.microsoft.com
+    - version: v1.0
+    - resource path: me/memberOf
+    - query parameters: displayName and id (only asks for the display name and id of the objects at the endpoint)
+4. Using the azure CLI and Microsoft Graph API directly relates to the AZ‑104 “Manage Azure identities and governance” exam domain.
+    By learning what information can be retrieved in what ways, and about which individual(s) is key
+    to being able to govern said individuals. Both the CLI and the API offer robust options for
+    gathering different information unique to each identity queried. This allows for automating
+    granting permissions and adding to/removing from groups using scripts and checks as demonstrated in
+    parts B and C of this assignment. Scripts can be used to automatically check what groups a user is in,
+    include rules to check if they should be/need to be in the groups they are in, and also add checks to 
+    see if they are not in groups they need to be in, and then automatically remove or add them from the
+    respective groups. 
