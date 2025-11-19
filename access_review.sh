@@ -3,6 +3,7 @@
 
 # Sets a timestamp environment variable that calls the system date function and returns it
 # in a format compatible with azure naming (excludes white space and colons)
+#!/usr/bin/env bash
 TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 # Turns each entry in the JSON file into a one line json for extracting information
 jq -c '.value[]' graph_memberOf.json | while read -r group; do
