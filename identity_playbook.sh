@@ -123,3 +123,18 @@ echo "group $GROUP_NAME deleted"
 echo "group $GROUP_NAME deleted" >> "$LOGFILE"
 echo "Script completed successfully at $(date)"
 echo "Script completed successfully at $(date)" >> "$LOGFILE"
+
+# Added an additional check for removing the logfile as well for if the script is run
+# Multiple times and the logfile gets messy 
+read -p "Do you want to delete the log file '$LOGFILE'? (y/n): " CONFIRMlog
+
+case "$CONFIRMlog" in
+    y|Y|yes|Yes|YES)
+        echo "Deleting the logfile..."
+        rm "$LOGFILE"
+        echo "Logfile deleted."
+        ;;
+    *)
+        echo "Logfile retained."
+        ;;
+esac
