@@ -1,3 +1,6 @@
 graph_memberOf.json
 pycache*
 identity_log.txt
+access_report.txt
+me.json
+my_groups.json
