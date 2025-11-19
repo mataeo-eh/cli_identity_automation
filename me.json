@@ -1,0 +1,14 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users/$entity",
+  "businessPhones": [],
+  "displayName": "Anderson, Mataeo J.",
+  "givenName": "Mataeo",
+  "id": "9ed11fb5-0c01-4289-bc2a-437d23ae3b9d",
+  "jobTitle": null,
+  "mail": "Mataeo.J.Anderson-1@ou.edu",
+  "mobilePhone": null,
+  "officeLocation": null,
+  "preferredLanguage": null,
+  "surname": "Anderson",
+  "userPrincipalName": "Mataeo.J.Anderson-1@ou.edu"
+}
